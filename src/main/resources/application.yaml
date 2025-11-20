@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: mcp
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/shopping_mcp
+    username: postgres
+    password: postgres
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+  ai:
+    mcp:
+      server:
+        stdio: true
+        name: shopping-mcp-server
+        version: 1.0.0
+
+  main:
+    web-application-type: none
+    banner-mode: off
+
+logging:
+  level:
+    root: OFF
+  file:
+    name: ./logs/mcp.log
+  pattern:
+    console: "%msg%n"
+
